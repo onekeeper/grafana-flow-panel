@@ -1,0 +1,139 @@
+.flow-panel
+{
+    display: flex;
+	padding-top: 1.2rem;
+    padding-bottom: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;	
+	min-height: 6.6rem;
+}
+
+.progress-container{
+	height:.8rem;	
+	width:80%;
+	overflow-x: hidden;
+    position: relative;
+	width: 72%;
+    margin: 0 auto;
+    overflow-x: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.progress-container .forward-bg{
+    background:url('../img/back.svg') no-repeat left center;
+	background-size: cover;
+	height:.8rem;	
+    position: absolute;
+	width:100%;
+	transform:rotate(180deg);
+	-ms-transform:rotate(180deg); 	/* IE 9 */
+	-moz-transform:rotate(180deg); 	/* Firefox */
+	-webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+	-o-transform:rotate(180deg); 	/* Opera */
+}
+
+.progress-container .forward-progress{
+	background:url('../img/front.svg') no-repeat left center;
+	background-size: cover;
+	height:.8rem;	
+    position: absolute;
+	width:100%;
+	left:-100%;
+	transform:rotate(180deg);
+	-ms-transform:rotate(180deg); 	/* IE 9 */
+	-moz-transform:rotate(180deg); 	/* Firefox */
+	-webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+	-o-transform:rotate(180deg); 	/* Opera */
+	animation: forward 2s ease-in-out 0s infinite;
+	/* Firefox: */
+	-moz-animation: forward 2s ease-in-out 0s infinite;
+	/* Safari 和 Chrome: */
+	-webkit-animation: forward 2s ease-in-out 0s infinite;
+	/* Opera: */
+	-o-animation: forward 2s ease-in-out 0s infinite;
+}
+
+.progress-container .opposite-bg{
+    background:url('../img/back.svg') no-repeat left center;
+	background-size: cover;
+	height:.8rem;	
+	position: absolute;
+	width:100%;
+}
+
+.progress-container .opposite-progress{
+	background:url('../img/front.svg') no-repeat left center;
+	background-size: cover;
+	height:.8rem;	
+	position: absolute;
+	width:100%;
+	right:-100%;
+	animation: back 2s ease-in-out 0s infinite;
+	/* Firefox: */
+	-moz-animation: back 2s ease-in-out 0s infinite;
+	/* Safari 和 Chrome: */
+	-webkit-animation: back 2s ease-in-out 0s infinite;
+	/* Opera: */
+	-o-animation: back 2s ease-in-out 0s infinite;
+}
+
+.flow-info{
+	color:#e3e3e3;
+	font-size:0.6rem;
+	line-height: 1rem;
+	margin-top:4px;
+	padding: 0 2px;
+	text-align:center;
+}
+
+.col-reset{padding-left:0px;padding-right:0px;}
+
+@keyframes back
+{
+	from {right: -100%;}
+	to {right: 0;}
+}
+
+@-moz-keyframes back /* Firefox */
+{
+	from {right: -100%;}
+	to {right: 0;}
+}
+
+@-webkit-keyframes back /* Safari 和 Chrome */
+{
+	from {right: -100%;}
+	to {right: 0;}
+}
+
+@-o-keyframes back /* Opera */
+{
+	from {right: -100%;}
+	to {right: 0;}
+}
+
+@keyframes forward
+{
+	from {left: -100%;}
+	to {left: 0;}
+}
+
+@-moz-keyframes forward /* Firefox */
+{
+	from {left: -100%;}
+	to {left: 0;}
+}
+
+@-webkit-keyframes forward /* Safari 和 Chrome */
+{
+	from {left: -100%;}
+	to {left: 0;}
+}
+
+@-o-keyframes forward /* Opera */
+{
+	from {left: -100%;}
+	to {left: 0;}
+}
+

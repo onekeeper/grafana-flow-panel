@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/module.js"],"names":["FlowChartCtrl"],"mappings":";;;;;;;;AAAQA,mB,mBAAAA,a;;;2BAGNA,a","file":"module.js","sourcesContent":["import {FlowChartCtrl} from './flowchart_ctrl';\n\nexport {\n  FlowChartCtrl as PanelCtrl\n};\n\n"]}

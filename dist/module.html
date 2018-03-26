@@ -1,0 +1,23 @@
+<div class="flow-panel small" ng-style="{height: ctrl.height}">
+	<div class="row" ng-if="ctrl.panel.forward.show">
+	  <div class="col-lg-12 col-reset">
+	       <div class="progress-container">
+			   <div class="forward-bg"></div>
+			   <div class="forward-progress"></div>
+		   </div>
+		   <p class="flow-info">{{ctrl.panel.forward.label}}：{{ctrl.panel.forward.value}}{{ctrl.panel.forward.extendUnit}}</p>
+	  </div>
+	</div>
+
+	<div class="row" ng-if="ctrl.panel.opposite.show">
+	  <div class="col-lg-12 col-reset">
+	       <div class="progress-container">
+			   <div class="opposite-bg"></div>
+			   <div class="opposite-progress"></div>
+		   </div>
+		   <p class="flow-info">{{ctrl.panel.opposite.label}}：{{ctrl.panel.opposite.value}}{{ctrl.panel.opposite.extendUnit}}</p>
+	  </div>
+	</div>
+</div>
+
+

@@ -1,0 +1,32 @@
+{
+  "type": "panel",
+  "name": "Flow Chart",
+  "id": "grafana-flow-panel",
+
+  "info": {
+    "description": "Flow chart panel for grafana",
+    "author": {
+      "name": "James",
+      "url": ""
+    },
+    "keywords": ["flowchart", "panel"],
+    "logos": {
+      "small": "src/img/flowchart_logo_small.png",
+      "large": "src/img/flowchart_logo_large.png"
+    },
+    "links": [
+      {"name": "Project site", "url": ""},
+      {"name": "Blog Post", "url": ""},
+      {"name": "MIT License", "url": ""}
+    ],
+    "screenshots": [
+    ],
+    "version": "1.0.0",
+    "updated": "2018-03-01"
+  },
+
+  "dependencies": {
+    "grafanaVersion": "4.6",
+    "plugins": [ ]
+  }
+}

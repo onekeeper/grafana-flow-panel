@@ -1,0 +1,77 @@
+<div class="editor-row">
+  <div class="section gf-form-group">
+    <h5 class="section-heading">Forward direction</h5>
+    <div class="gf-form">
+      <span class="gf-form-label width-8">Label</span>
+      <div class="gf-form-select-wrapper max-width-10">
+	    <input type="text" class="gf-form-input max-width-10" ng-model="ctrl.panel.forward.label" ng-change="ctrl.render()">
+      </div>
+    </div>
+	<div class="gf-form">
+      <span class="gf-form-label width-8">Unit</span>
+	  <div class="gf-form-dropdown-typeahead width-10"
+        ng-model="ctrl.panel.forward.format"
+        dropdown-typeahead="ctrl.unitFormats"
+        dropdown-typeahead-on-select="ctrl.setUnitFormat($subItem, 'forward')">
+      </div>
+	  <!--
+      <div class="gf-form-select-wrapper max-width-10">
+	    <input type="text" class="gf-form-input max-width-10" ng-model="ctrl.panel.forward.unit" ng-change="ctrl.render()">
+      </div>
+	  -->
+    </div>
+	<div class="gf-form">
+      <span class="gf-form-label width-8">Extend Unit</span>
+      <div class="gf-form-select-wrapper max-width-10">
+	    <input type="text" class="gf-form-input max-width-10" ng-model="ctrl.panel.forward.extendUnit" ng-change="ctrl.render()">
+      </div>
+    </div>
+	<gf-form-switch class="gf-form" label="Show" label-class="width-11" checked="ctrl.panel.forward.show" on-change="ctrl.render()"></gf-form-switch>
+	<!--
+	<div class="gf-form">
+      <span class="gf-form-label width-11">Show</span>
+      <div class="gf-form-select-wrapper width-9">
+        <select class="gf-form-input" ng-model="ctrl.panel.forward.show" ng-options="s for s in [false, true]" ng-change="ctrl.render()"></select>
+      </div>
+    </div>
+	-->
+  </div>
+  
+  <div class="section gf-form-group">
+    <h5 class="section-heading">Opposite direction</h5>
+    <div class="gf-form">
+      <span class="gf-form-label width-8">Label</span>
+      <div class="gf-form-select-wrapper max-width-10">
+	    <input type="text" class="gf-form-input max-width-10" ng-model="ctrl.panel.opposite.label" ng-change="ctrl.render()">
+      </div>
+    </div>
+	<div class="gf-form">
+      <span class="gf-form-label width-8">Unit</span>
+	  <div class="gf-form-dropdown-typeahead width-10"
+        ng-model="ctrl.panel.opposite.format"
+        dropdown-typeahead="ctrl.unitFormats"
+        dropdown-typeahead-on-select="ctrl.setUnitFormat($subItem, 'opposite')">
+      </div>
+	  <!--
+      <div class="gf-form-select-wrapper max-width-10">
+	    <input type="text" class="gf-form-input max-width-10" ng-model="ctrl.panel.opposite.unit" ng-change="ctrl.render()">
+      </div>
+	  -->
+    </div>
+	<div class="gf-form">
+      <span class="gf-form-label width-8">Extend Unit</span>
+      <div class="gf-form-select-wrapper max-width-10">
+	    <input type="text" class="gf-form-input max-width-10" ng-model="ctrl.panel.opposite.extendUnit" ng-change="ctrl.render()">
+      </div>
+    </div>
+	<gf-form-switch class="gf-form" label="Show" label-class="width-11" checked="ctrl.panel.opposite.show" on-change="ctrl.render()"></gf-form-switch>
+	<!--
+	<div class="gf-form">
+      <span class="gf-form-label width-11">Show</span>
+      <div class="gf-form-select-wrapper width-9">
+        <select class="gf-form-input" ng-model="ctrl.panel.opposite.show" ng-options="s for s in [false, true]" ng-change="ctrl.render()"></select>
+      </div>
+    </div>
+	-->
+  </div>
+</div>
