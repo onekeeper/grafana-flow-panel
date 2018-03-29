@@ -40,13 +40,12 @@
     position: absolute;
 	width:100%;
 	left:-100%;
+	/*
 	animation: forward 2s ease-in-out 0s infinite;
-	/* Firefox: */
 	-moz-animation: forward 2s ease-in-out 0s infinite;
-	/* Safari 和 Chrome: */
 	-webkit-animation: forward 2s ease-in-out 0s infinite;
-	/* Opera: */
 	-o-animation: forward 2s ease-in-out 0s infinite;
+	*/
 }
 
 .progress-container .opposite-bg{
@@ -64,13 +63,12 @@
 	position: absolute;
 	width:100%;
 	right:-100%;
+	/*
 	animation: back 2s ease-in-out 0s infinite;
-	/* Firefox: */
 	-moz-animation: back 2s ease-in-out 0s infinite;
-	/* Safari 和 Chrome: */
 	-webkit-animation: back 2s ease-in-out 0s infinite;
-	/* Opera: */
 	-o-animation: back 2s ease-in-out 0s infinite;
+	*/
 }
 
 .flow-info{
