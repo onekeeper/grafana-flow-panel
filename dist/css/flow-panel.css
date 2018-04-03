@@ -40,12 +40,10 @@
     position: absolute;
 	width:100%;
 	left:-100%;
-	/*
 	animation: forward 2s ease-in-out 0s infinite;
 	-moz-animation: forward 2s ease-in-out 0s infinite;
 	-webkit-animation: forward 2s ease-in-out 0s infinite;
 	-o-animation: forward 2s ease-in-out 0s infinite;
-	*/
 }
 
 .progress-container .opposite-bg{
@@ -63,12 +61,10 @@
 	position: absolute;
 	width:100%;
 	right:-100%;
-	/*
 	animation: back 2s ease-in-out 0s infinite;
 	-moz-animation: back 2s ease-in-out 0s infinite;
 	-webkit-animation: back 2s ease-in-out 0s infinite;
 	-o-animation: back 2s ease-in-out 0s infinite;
-	*/
 }
 
 .flow-info{
