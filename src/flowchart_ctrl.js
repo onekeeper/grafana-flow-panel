@@ -90,6 +90,9 @@ export class FlowChartCtrl extends MetricsPanelCtrl {
 			let datapointsO = series[0].datapoints;  
 			this.setData(datapointsO, this.panel.opposite);	
 		}
+	}else{
+		this.setData([], this.panel.forward);
+		this.setData([], this.panel.opposite);
 	}
   }
   

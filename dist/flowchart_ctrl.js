@@ -162,6 +162,9 @@ System.register(['app/plugins/sdk', 'lodash', './unit', 'app/core/utils/kbn', '.
 								var _datapointsO = series[0].datapoints;
 								this.setData(_datapointsO, this.panel.opposite);
 							}
+						} else {
+							this.setData([], this.panel.forward);
+							this.setData([], this.panel.opposite);
 						}
 					}
 				}, {
