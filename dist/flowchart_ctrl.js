@@ -79,7 +79,6 @@ System.register(['app/plugins/sdk', 'lodash', './unit', 'app/core/utils/kbn', '.
 						forward: {
 							label: '流入',
 							unit: 'N/A',
-							value: '',
 							format: 'short',
 							extendUnit: '',
 							show: true
@@ -87,10 +86,18 @@ System.register(['app/plugins/sdk', 'lodash', './unit', 'app/core/utils/kbn', '.
 						opposite: {
 							label: '流出',
 							unit: 'N/A',
-							value: '',
 							format: 'short',
 							extendUnit: '',
 							show: true
+						}
+					};
+
+					_this.dataTemp = {
+						forward: {
+							value: ''
+						},
+						opposite: {
+							value: ''
 						}
 					};
 
@@ -115,10 +122,10 @@ System.register(['app/plugins/sdk', 'lodash', './unit', 'app/core/utils/kbn', '.
 					value: function setUnitFormat(subItem, type) {
 						if (type == 'forward') {
 							this.panel.forward.format = subItem.value;
-							this.panel.forward.value = unit.formatValue(this.panel, this.panel.forward.value, subItem.value);
+							this.dataTemp.forward.value = unit.formatValue(this.panel, this.dataTemp.forward.value, subItem.value);
 						} else {
 							this.panel.opposite.format = subItem.value;
-							this.panel.opposite.value = unit.formatValue(this.panel, this.panel.opposite.value, subItem.value);
+							this.dataTemp.opposite.value = unit.formatValue(this.panel, this.dataTemp.opposite.value, subItem.value);
 						}
 						this.render();
 					}
@@ -135,12 +142,12 @@ System.register(['app/plugins/sdk', 'lodash', './unit', 'app/core/utils/kbn', '.
 					}
 				}, {
 					key: 'setData',
-					value: function setData(datapoints, panel) {
+					value: function setData(datapoints, panel, data) {
 						if (datapoints.length > 0) {
-							panel.value = datapoints[datapoints.length - 1][0];
-							panel.value = unit.formatValue(panel, panel.value, panel.format);
+							data.value = datapoints[datapoints.length - 1][0];
+							data.value = unit.formatValue(panel, data.value, panel.format);
 						} else {
-							panel.value = 'N/A';
+							data.value = 'N/A';
 						}
 					}
 				}, {
@@ -148,24 +155,28 @@ System.register(['app/plugins/sdk', 'lodash', './unit', 'app/core/utils/kbn', '.
 					value: function parseSeries(series) {
 						if (series && series.length > 0) {
 							series = unit.checkSeries(this.panel.targets, series);
+
 							if (this.panel.forward.show) {
 								var datapointsF = series[0].datapoints;
-								this.setData(datapointsF, this.panel.forward);
+								this.setData(datapointsF, this.panel.forward, this.dataTemp.forward);
 							}
 							if (this.panel.forward.show && this.panel.opposite.show) {
 								if (series[1] && series[1].datapoints) {
 									var datapointsO = series[1].datapoints;
-									this.setData(datapointsO, this.panel.opposite);
+									this.setData(datapointsO, this.panel.opposite, this.dataTemp.opposite);
 								}
 							}
 							if (!this.panel.forward.show && this.panel.opposite.show) {
 								var _datapointsO = series[0].datapoints;
-								this.setData(_datapointsO, this.panel.opposite);
+								this.setData(_datapointsO, this.panel.opposite, this.dataTemp.opposite);
 							}
 						} else {
-							this.setData([], this.panel.forward);
-							this.setData([], this.panel.opposite);
+							this.setData([], this.panel.forward, this.dataTemp.forward);
+							this.setData([], this.panel.opposite, this.dataTemp.opposite);
 						}
+						this.panel.forward.hasOwnProperty("value") && delete this.panel.forward.value;
+						this.panel.opposite.hasOwnProperty("value") && delete this.panel.opposite.value;
+						return this.dataTemp;
 					}
 				}, {
 					key: 'seriesHandler',
